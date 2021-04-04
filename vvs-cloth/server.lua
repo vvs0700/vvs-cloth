@@ -1,0 +1,6 @@
+TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+ESX.RegisterUsableItem('cloth', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	TriggerClientEvent('vvs:cleaningcloth', source)
+	xPlayer.removeInventoryItem('cloth', '1')
+end)
